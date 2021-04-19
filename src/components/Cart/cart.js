@@ -32,6 +32,8 @@ const Cart = ({ basketProps }) => {
 
   productInCart = productInCart.map((product, index) => {
     console.log("product", product);
+    // var Total=product.number*product.price;
+    // console.log('total',Total);
     return (
       <Fragment>
         <div className="card" key={product.id}>
@@ -52,14 +54,20 @@ const Cart = ({ basketProps }) => {
             <h2 className="product-price">{product.price}.00</h2>
 
             <button className="button" href="#">
-              Check out
+              Check Out
             </button>
           </div>
         </div>
+        <div className='total-bill'>{product.number * product.price}</div>
       </Fragment>
     );
   });
-  return <div>{productInCart}</div>;
+  return (
+    <div>
+      <div>{/* <h2>Total:{pro}</h2> */}</div>
+      {productInCart}
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => ({
