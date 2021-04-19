@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+
+// import Home from "./components/Home/home";
+import Navbar from "./components/Navbar/nav";
+import RouterDashboard from "./router/routerDashboard";
+// import NavConatiner from './container/NavContainer';
+// import HomeContainer from './container/dashboardContainer'
+// import DashboardContainer from "./container/dashboardContainer";
+// import Cart from "./components/Cart/cart";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <RouterDashboard />
     </div>
   );
 }

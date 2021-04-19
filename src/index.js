@@ -1,17 +1,30 @@
+
+// NPM packages
 import React from 'react';
+
+//Router importing
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+//Provider file (Wrapping )
+import { Provider } from 'react-redux';
+
+// Component files
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+// Redux store
+import store from './services/store';
+
+//importing css
+ import './index.css'
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
